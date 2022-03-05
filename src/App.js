@@ -6,7 +6,9 @@ import UseEffectHook from "./UseEffectHook";
 function App() {
   return (
     <div className="App">
-      <UseEffectHook />
+      <Routes>
+        <Route path="/" element={<UseEffectHook />}></Route>
+      </Routes>
     </div>
   );
 }
