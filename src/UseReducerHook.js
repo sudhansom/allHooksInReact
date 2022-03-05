@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -23,7 +24,7 @@ const reducer = (state, action) => {
 
 function UseReducerHook() {
   const [state, dispatch] = useReducer(reducer, { count: 0, showText: true });
-
+  const navigate = useNavigate();
   return (
     <div>
       <h1>Your count</h1>
@@ -49,6 +50,13 @@ function UseReducerHook() {
           <p>This is an odd number</p>
         )}
       </div>
+      <button
+        onClick={() => {
+          navigate("/effect");
+        }}
+      >
+        Change to UseEffect
+      </button>
     </div>
   );
 }
