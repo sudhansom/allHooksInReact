@@ -1,5 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function UseEffectHook() {
-  return <div>useeffecct</div>;
+  const url = "https://bhuwans-backend.herokuapp.com/api/v1/products";
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await axios.get(url);
+      setList(products);
+    };
+  }, []);
+  return (
+    <div>
+      <h1>UseEffect Demo:</h1>
+    </div>
+  );
 }
