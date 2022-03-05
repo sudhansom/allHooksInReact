@@ -7,12 +7,21 @@ export default function UseEffectHook() {
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await axios.get(url);
-      setList(products);
+      console.log("products:", products.data);
+      setList(products.data);
     };
-  }, []);
+    fetchProducts();
+  }, [url]);
   return (
     <div>
       <h1>UseEffect Demo:</h1>
+      {list.length ? (
+        list.map((item, index) => {
+          return <p key={index}>{item.name}</p>;
+        })
+      ) : (
+        <p>comming...</p>
+      )}
     </div>
   );
 }
