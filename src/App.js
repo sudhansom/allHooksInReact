@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import UseReducerHook from "./UseStateHook";
+import UseEffectHook from "./UseEffectHook";
 
 function App() {
   return (
     <div className="App">
-      <UseReducerHook />
+      <UseEffectHook />
     </div>
   );
 }
