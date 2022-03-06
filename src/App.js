@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
-import UseEffectHook from "./UseEffectHook";
+import UseEffectHook from "./components/UseEffectHook";
 import UseReducerHook from "./UseReducerHook";
 import UseStateHook from "./UseStateHook";
 import Home from "./Home";
