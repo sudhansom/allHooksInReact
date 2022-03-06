@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import UseStateLogic from "./UseStateLogic";
 
 function UseStateHook() {
-  const [count, setCount] = useState(0);
-  const [showText, setShowText] = useState(true);
+  const [count, setCount, showText, setShowText] = UseStateLogic();
   return (
     <div>
       <h1>Your count</h1>
