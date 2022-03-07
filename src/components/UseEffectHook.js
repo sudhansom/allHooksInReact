@@ -4,6 +4,8 @@ import axios from "axios";
 export default function UseEffectHook() {
   const url = "https://bhuwans-backend.herokuapp.com/api/v1/products";
   const [list, setList] = useState([]);
+  const [data, setData] = useState([]);
+  const [filterList, setFilterList] = useState([]);
   const [inputText, setInputText] = useState("");
   useEffect(() => {
     const fetchProducts = async () => {
@@ -13,6 +15,17 @@ export default function UseEffectHook() {
     };
     fetchProducts();
   }, [url]);
+  const handleChange = () => {
+    const tempList = list.filter((item) => item.name.includes(inputText));
+    setFilterList(tempList);
+  };
+  useEffect(() => {
+    if (inputText) {
+      setData(filterList);
+    } else {
+      setData(list);
+    }
+  }, [inputText]);
 
   return (
     <div>
@@ -22,14 +35,13 @@ export default function UseEffectHook() {
         value={inputText}
         onChange={(event) => {
           setInputText(event.target.value);
+          handleChange();
         }}
       ></input>
-      {list.length ? (
-        list
-          .filter((product) => product.name.includes(inputText))
-          .map((item, index) => {
-            return <p key={index}>{item.name}</p>;
-          })
+      {data.length ? (
+        data.map((item, index) => {
+          return <p key={index}>{item.name}</p>;
+        })
       ) : (
         <p>comming...</p>
       )}
