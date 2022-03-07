@@ -13,6 +13,7 @@ export default function UseEffectHook() {
     };
     fetchProducts();
   }, [url]);
+
   return (
     <div>
       <h1>UseEffect Demo:</h1>
@@ -24,9 +25,11 @@ export default function UseEffectHook() {
         }}
       ></input>
       {list.length ? (
-        list.map((item, index) => {
-          return <p key={index}>{item.name}</p>;
-        })
+        list
+          .filter((product) => product.name.includes(inputText))
+          .map((item, index) => {
+            return <p key={index}>{item.name}</p>;
+          })
       ) : (
         <p>comming...</p>
       )}
