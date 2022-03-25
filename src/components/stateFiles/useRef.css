@@ -1,0 +1,14 @@
+.circle {
+  margin: 10% auto;
+  height: 40vh;
+  width: 40vh;
+  border-radius: 100%;
+  background-color: aqua;
+}
+
+.rectangle {
+  margin: 10% auto;
+  height: 60vh;
+  width: 50vh;
+  background-color: rgb(72, 24, 184);
+}
