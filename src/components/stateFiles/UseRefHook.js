@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./useRef.css";
 
 function UseRefHook() {
-  const [isCircle, setIsCircle] = useState(true);
+  const [name, setName] = useState("");
+  const inputRef = useRef();
+  const clearText = () => {
+    inputRef.current.value = "";
+  };
   return (
-    <div
-      className={isCircle ? "circle" : "rectangle"}
-      onClick={() => {
-        setIsCircle(!isCircle);
-      }}
-    ></div>
+    <div>
+      <input
+        type="text"
+        onChange={() => {
+          setName(name);
+        }}
+        ref={inputRef}
+      ></input>
+      <button onClick={clearText}>Submit</button>
+    </div>
   );
 }
 
