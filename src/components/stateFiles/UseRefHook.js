@@ -8,7 +8,7 @@ function UseRefHook() {
     inputRef.current.value = "";
   };
   return (
-    <div>
+    <div className="circle">
       <input
         type="text"
         onChange={() => {
