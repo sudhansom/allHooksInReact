@@ -6,6 +6,7 @@ import UseReducerHook from "./components/UseReducerHook";
 import UseStateHook from "./components/stateFiles/UseStateHook";
 import Home from "./Home";
 import UseRefHook from "./components/stateFiles/UseRefHook";
+import ColorValues from "./components/customHooks/ColorValues";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/state" element={<UseStateHook />}></Route>
         <Route path="/reducer" element={<UseReducerHook />}></Route>
         <Route path="/ref" element={<UseRefHook />}></Route>
+        <Route path="/color" element={<ColorValues />}></Route>
       </Routes>
     </div>
   );
