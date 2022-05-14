@@ -1,26 +1,19 @@
 import React, { useState } from "react";
-
+import { useCustomHook } from "./useCustomHook";
 const useColorValues = () => {
-  const [text, setText] = useState("");
-  const [color, setColor] = useState("#119988");
+  const [textProps, resetText] = useCustomHook("");
+  const [colorProps, setColor] = useCustomHook("#119988");
+
+  console.log("textProps:---", textProps);
   const handleClick = () => {
-    alert(`${text} value is ${color}`);
+    alert(`${textProps.value} value is ${colorProps.value}`);
+    resetText("");
+    setColor("#119988");
   };
   return (
     <div>
-      <input
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
-      />
-      <input
-        value={color}
-        onChange={(e) => {
-          setColor(e.target.value);
-        }}
-        type="color"
-      />
+      <input type={"text"} {...textProps} />
+      <input {...colorProps} type="color" />
       <button onClick={handleClick}>Show</button>
     </div>
   );
