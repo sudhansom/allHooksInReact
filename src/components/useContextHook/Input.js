@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 
-function Input({ setUserName }) {
+import { contextApi } from "./MainPage";
+
+function Input() {
+  const { setUserName } = useContext(contextApi);
   return (
     <div>
       <input
