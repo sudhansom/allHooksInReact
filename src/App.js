@@ -9,6 +9,7 @@ import UseRefHook from "./components/stateFiles/UseRefHook";
 import ColorValues from "./components/customHooks/ColorValues";
 
 import ImperativeHandle from "./components/imperativeHandle/ImperativeHandle";
+import MainPage from "./components/useContextHook/MainPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Link to="/reducer">Reducer</Link>
         <Link to="/effect">Effect</Link>
         <Link to="/imperative">ImperativeHandle</Link>
+        <Link to="/useContext">useContext</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/ref" element={<UseRefHook />}></Route>
         <Route path="/color" element={<ColorValues />}></Route>
         <Route path="/imperative" element={<ImperativeHandle />}></Route>
+        <Route path="/useContext" element={<MainPage />}></Route>
       </Routes>
     </div>
   );
