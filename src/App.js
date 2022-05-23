@@ -8,6 +8,8 @@ import Home from "./Home";
 import UseRefHook from "./components/stateFiles/UseRefHook";
 import ColorValues from "./components/customHooks/ColorValues";
 
+import ImperativeHandle from "./components/imperativeHandle/ImperativeHandle";
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,7 @@ function App() {
         <Link to="/state">State</Link>
         <Link to="/reducer">Reducer</Link>
         <Link to="/effect">Effect</Link>
+        <Link to="/imperative">ImperativeHandle</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -23,6 +26,7 @@ function App() {
         <Route path="/reducer" element={<UseReducerHook />}></Route>
         <Route path="/ref" element={<UseRefHook />}></Route>
         <Route path="/color" element={<ColorValues />}></Route>
+        <Route path="/imperative" element={<ImperativeHandle />}></Route>
       </Routes>
     </div>
   );
