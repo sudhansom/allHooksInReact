@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { contextApi } from "./MainPage";
+import { ContextApi } from "./MainPage";
 
 function Label() {
-  const { userName } = useContext(contextApi);
+  const { userName } = useContext(ContextApi);
   return <div>User: {userName}</div>;
 }
 
