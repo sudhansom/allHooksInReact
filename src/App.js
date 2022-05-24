@@ -11,6 +11,7 @@ import ColorValues from "./components/customHooks/ColorValues";
 import ImperativeHandle from "./components/imperativeHandle/ImperativeHandle";
 import MainPage from "./components/useContextHook/MainPage";
 import MainPageUseCallBack from "./components/useCallBackFunction/MainPage";
+import MainPageUseMemo from "./components/useMemoHook/MainPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Link to="/imperative">ImperativeHandle</Link>
         <Link to="/useContext">useContext</Link>
         <Link to="/usecallback">useCallBack</Link>
+        <Link to="/usememo">useMemo</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -33,6 +35,7 @@ function App() {
         <Route path="/imperative" element={<ImperativeHandle />}></Route>
         <Route path="/useContext" element={<MainPage />}></Route>
         <Route path="/usecallback" element={<MainPageUseCallBack />}></Route>
+        <Route path="/usememo" element={<MainPageUseMemo />}></Route>
       </Routes>
     </div>
   );
