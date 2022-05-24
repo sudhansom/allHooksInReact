@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 function MainPage() {
   const [count, setCount] = useState(0);
@@ -6,15 +6,15 @@ function MainPage() {
   const handleClick = () => {
     setCount(count + 1);
   };
-  const evenOdd = () => {
-    console.log("even odd");
+  const evenOdd = useMemo(() => {
+    console.log("even or odd ???");
     return count % 2 === 0;
-  };
+  }, [count]);
   return (
     <div>
       <h1>UseMemo Hook:</h1>
       <button onClick={handleClick}>{count}</button>
-      <span>{evenOdd() ? "even" : "odd"}</span>
+      <span>{evenOdd ? "even" : "odd"}</span>
       <button
         onClick={() => {
           setCount1(count1 + 1);
